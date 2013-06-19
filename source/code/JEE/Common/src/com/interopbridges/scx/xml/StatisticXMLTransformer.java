@@ -240,8 +240,7 @@ public class StatisticXMLTransformer {
          * .NET).
          */
         StreamResult result = new StreamResult(output);
-        SAXTransformerFactory tf = (SAXTransformerFactory) com.sun.org.apache.xalan.internal.xsltrc.trax.TransformerFactoryImpl
-                .newInstance();
+        SAXTransformerFactory tf = new com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl(); //use fallback
         TransformerHandler transformer = tf.newTransformerHandler();
         Transformer serializer = transformer.getTransformer();
         serializer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");

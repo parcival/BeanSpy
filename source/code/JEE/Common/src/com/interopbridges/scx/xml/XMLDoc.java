@@ -67,8 +67,7 @@ public class XMLDoc {
          * .NET).
          */
         StreamResult result = new StreamResult(output);
-        SAXTransformerFactory tf = (SAXTransformerFactory) SAXTransformerFactory
-                .newInstance();
+        SAXTransformerFactory tf = new com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl(); //use fallback
         TransformerHandler transformer = tf.newTransformerHandler();
         Transformer serializer = transformer.getTransformer();
         serializer.setOutputProperty(OutputKeys.ENCODING, ENCODING);
